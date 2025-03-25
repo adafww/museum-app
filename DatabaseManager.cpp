@@ -50,7 +50,7 @@ void DatabaseManager::insertTestData() {
     if (query.next() && query.value(0).toInt() > 0) return;
     
     query.exec("INSERT INTO halls (name, description) VALUES ('Главный зал', 'Основная экспозиция'), ('Исторический зал', 'Древние артефакты')");
-    query.exec("INSERT INTO exhibits (name, description, date_received, condition, hall_id) VALUES ('Монета Рима', 'Старинная монета', '2018-10-12', 'Отличное', 1), ('Статуя Греции', 'Мраморная статуя', '2019-05-30', 'Хорошее', 2)");
+    query.exec("INSERT INTO exhibits (name, description, date_received, `condition`, hall_id) VALUES ('Монета Рима', 'Старинная монета', '2018-10-12', 'Отличное', 1), ('Статуя Греции', 'Мраморная статуя', '2019-05-30', 'Хорошее', 2)");
     query.exec("INSERT INTO employees (name, position, work_schedule) VALUES ('Алексей Смирнов', 'Гид', 'Пн-Пт 10:00-18:00'), ('Ольга Петрова', 'Администратор', 'Вт-Сб 09:00-17:00')");
     query.exec("INSERT INTO visitors (name, visit_date, ticket_number) VALUES ('Иван Иванов', '2025-03-25', 'A12345'), ('Мария Сидорова', '2025-03-26', 'B67890')");
     query.exec("INSERT INTO tours (name, description, guide_id) VALUES ('Обзорная экскурсия', 'Основные экспонаты', 1), ('Древний мир', 'Исторический зал', 1)");
