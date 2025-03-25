@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_museum_app_FILE /home/adafww/museum_app/build/museum_app)
+set(__QT_DEPLOY_TARGET_museum_app_TYPE EXECUTABLE)
