@@ -20,11 +20,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // Кнопки для добавления, редактирования и удаления
     QVBoxLayout *layout = new QVBoxLayout;
     QPushButton *addButton = new QPushButton("Добавить", this);
-    QPushButton *editButton = new QPushButton("Редактировать", this);
     QPushButton *deleteButton = new QPushButton("Удалить", this);
 
     layout->addWidget(addButton);
-    layout->addWidget(editButton);
     layout->addWidget(deleteButton);
 
     QWidget *widget = new QWidget();
@@ -32,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setMenuWidget(widget);
 
     connect(addButton, &QPushButton::clicked, this, &MainWindow::addRecord);
-    connect(editButton, &QPushButton::clicked, this, &MainWindow::editRecord);
     connect(deleteButton, &QPushButton::clicked, this, &MainWindow::deleteRecord);
 
     setWindowTitle("Учёт работы музея");
@@ -49,7 +46,7 @@ QTableView* MainWindow::createTableView(const QString &tableName) {
 
     QTableView *view = new QTableView;
     view->setModel(model);
-    view->setEditTriggers(QAbstractItemView::DoubleClicked | QAbstractItemView::EditKeyPressed);
+    view->setEditTriggers(QAbstractItemView::DoubleClicked);
     view->setSelectionBehavior(QAbstractItemView::SelectRows);
     view->setSelectionMode(QAbstractItemView::SingleSelection);
     return view;
